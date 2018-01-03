@@ -9,7 +9,7 @@ var connectionString = taaa.getInput('IotHubConnectionString');
 var iothuburl = taaa.getInput('IotHubDeviceRequestUrl');
 var authb64 = taaa.getInput('IoTHubAuthString');
 var cloudToDeviceMsg = taaa.getInput('MessageContent');
-var messageId =taaa.getInput('MessageId');
+var messageId = taaa.getInput('MessageId');
 
 var buf = Buffer.from(authb64, 'base64');
 var auth = buf.toString('utf8');
@@ -91,7 +91,6 @@ serviceClient.open(function (err) {
 
             serviceClient.send(id, message, printResultFor('send'));
             console.log("Sent message to ... " + id);
-
         }, this);
 
         console.log("done");

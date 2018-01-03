@@ -26,7 +26,7 @@
             "label": "IotHubConnectionString",
             "defaultValue": "$(iothubconnstring)",
             "required": true,
-            "helpMarkDown": "Connection string to Azure IoT Hub. You can find it in portal.azure.com. Looks like HostName=banana.azure-devices.net;SharedAccessKeyName=banana;SharedAccessKey=bananabananabanana= "
+            "helpMarkDown": "Connection string to Azure IoT Hub. You can find it in portal.azure.com, within the \"Shared access policies\" of your IoT Hub. Looks like HostName=banana.azure-devices.net;SharedAccessKeyName=banana;SharedAccessKey=bananabananabanana="
         },
         {
             "name": "IotHubDeviceRequestUrl",
@@ -42,10 +42,10 @@
             "label": "IoTHubAuthString",
             "defaultValue": "$(iothubauthB64)",
             "required": true,
-            "helpMarkDown": "This is the auth string required to talk to IoT Hub. You can find it in the Azure portal. However Base 64 encode it. Currently there's an issue in passing the auth key and the workaround is to base 64 encode the key. It will be decoded during processing."
+            "helpMarkDown": "This is the SAS Token required to talk to IoT Hub. You can generate it with e.g. \"Device Explorer Tool\" (https://github.com/Azure/azure-iot-sdk-csharp/releases). However Base 64 encode it. Currently there's an issue in passing the auth key and the workaround is to base 64 encode the key. It will be decoded during processing."
         },
         {
-            "name": "Message",
+            "name": "MessageContent",
             "type": "string",
             "label": "Message",
             "defaultValue": "Hello from VSTS.",
